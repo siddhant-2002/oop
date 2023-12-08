@@ -1,0 +1,78 @@
+/*
+
+Create a class Animal having three data members eats, noOfLegs, isVeg.Based
+on requirement create setter-getter methods for each member. Class Cat
+extends Animal, this class also contains data member skin colour, make use of
+super keyword and print all the four values
+
+ */
+
+
+import java.util.*;
+
+class animal
+{
+    animal()
+    {
+
+    }
+    private String food;
+    String skinColour="White";
+    private int leg;
+    private String foodtype;
+
+    public void setfood(String f)
+    {
+        food=f;
+    }
+
+    public String getfood()
+    {
+        return food;
+    }
+
+    public void setleg(int l)
+    {
+        leg=l;
+    }
+
+    public int getleg()
+    {
+        return leg;
+    }
+
+    public void setfoodtype(String s)
+    {
+        foodtype=s;
+    }
+    public String getfoodtype()
+    {
+        return foodtype;
+    }
+}
+
+class cat extends animal
+{
+
+    String skinColour;
+    String getskincolour()
+    {
+        return super.skinColour;
+    }
+}
+
+public class exp23 {
+
+    public static void main(String [] args)
+    {
+        Scanner get=new Scanner(System.in);
+        cat kitty=new cat();
+        kitty.setfood("Milk");
+        System.out.println("Food : "+kitty.getfood());
+        kitty.setleg(4);
+        System.out.println("No of legs : "+kitty.getleg());
+        kitty.setfoodtype("Veg");
+        System.out.println("Food type : "+kitty.getfoodtype());
+        System.out.println("Skin colour is : "+kitty.getskincolour());
+    }
+}

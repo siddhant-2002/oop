@@ -1,0 +1,37 @@
+/*
+Write a class Calculator having member function add(). Overload add () 3
+times
+ */
+
+import java.util.*;
+
+class calculator
+{
+    calculator(){}
+    void add(int x,int y)
+    {
+        int sum=x+y;
+        System.out.println("Sum is : "+sum);
+    }
+
+    void add(int x,int y,int z)
+    {
+        int sum = x+y+z;
+        System.out.println("Sum is : "+sum);
+    }
+    void add(double x,double y)
+    {
+        double sum=x+y;
+        System.out.println("Sum is : "+sum);
+    }
+}
+
+public class exp20 {
+    public static void main(String [] args)
+    {
+        calculator cal=new calculator();
+        cal.add(6,8);
+        cal.add(8.6,7.3);
+        cal.add(7,31,23);
+    }
+}

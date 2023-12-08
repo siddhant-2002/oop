@@ -1,0 +1,91 @@
+/*
+Create a class Student having abstract member functions to get name, SSC
+marks, HSC marks, create 3 classes Harish, Jayant and Vijay who extend
+Student class and implement the abstract methods and print the student
+details
+ */
+
+import java.util.*;
+
+abstract class student
+{
+    Scanner get = new Scanner(System.in);
+    String name;
+    double ssc,hsc;
+    student() {}
+    abstract void getdata();
+    abstract void display();
+}
+
+class harish extends student
+{
+    String name="Harish";
+    double ssc,hsc;
+    @Override
+    void getdata() {
+        System.out.println("\nName of the student is Harish");
+        System.out.println("Enter the SSC marks of Harish :");
+        ssc=get.nextDouble();
+        System.out.println("Enter the HSC marks of Harish : ");
+        hsc=get.nextDouble();
+    }
+    void display()
+    {
+        System.out.println("\nName of student : "+name);
+        System.out.println("SSC marks : "+ssc);
+        System.out.println("HSC marks : "+hsc);
+    }
+}
+
+class Jayant extends student
+{
+    String name="Jayant";
+    @Override
+    void getdata() {
+        System.out.println("\nName of the student is Jayant");
+        System.out.println("Enter the SSC marks of jayant :");
+        ssc=get.nextDouble();
+        System.out.println("nEnter the HSC marks of jayant : ");
+        hsc=get.nextDouble();
+    }
+    void display()
+    {
+        System.out.println("Name of student : "+name);
+        System.out.println("SSC marks : "+ssc);
+        System.out.println("HSC marks : "+hsc);
+    }
+}
+
+class vijay extends student
+{
+    String name="Vijay";
+    @Override
+    void getdata() {
+        System.out.println("\nName of the student is Vijay");
+        System.out.println("Enter the SSC marks of Vijay :");
+        ssc=get.nextDouble();
+        System.out.println("Enter the HSC marks of Vijay : ");
+        hsc=get.nextDouble();
+    }
+    void display()
+    {
+        System.out.println("Name of student : "+name);
+        System.out.println("SSC marks : "+ssc);
+        System.out.println("HSC marks : "+hsc);
+    }
+}
+
+public class exp22 {
+    public static void main(String [] args)
+    {
+        harish h=new harish();
+        h.getdata();
+        h.display();
+        Jayant j=new Jayant();
+        j.getdata();
+        j.display();
+        vijay v=new vijay();
+        v.getdata();
+        v.display();
+    }
+}

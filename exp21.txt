@@ -1,0 +1,90 @@
+/*
+Consider a scenario where Bank is a class that provides functionality to get the
+rate of interest. However, the rate of interest varies according to banks. For
+example, SBI, ICICI and AXIS banks could provide 8%, 7%, and 9% rate of
+interest
+ */
+
+import java.util.*;
+
+class bank
+{
+    Scanner get = new Scanner(System.in);
+    public long amount;
+    public int year;
+    public void getdata()
+    {
+        System.out.println("Enter the amount to invest : ");
+        amount=get.nextLong();
+        System.out.println("Enter duration (In year) : ");
+        year=get.nextInt();
+    }
+}
+
+class sbi extends bank
+{
+    double rate = 8.0;
+    void rateofinterest()
+    {
+        double interest;
+        interest=(amount*rate*year/100);
+        System.out.println("The SBI bank will give you the interest :"+interest);
+    }
+}
+
+class icici extends bank
+{
+    double rate = 7.0;
+    void rateofinterest()
+    {
+        double interest;
+        interest=(amount*rate*year/100);
+        System.out.println("The ICICI bank will give you the interest :"+interest);
+    }
+}
+
+class axis extends bank
+{
+    double rate = 9.0;
+    void rateofinterest()
+    {
+        double interest;
+        interest=(amount*rate*year/100);
+        System.out.println("The axis bank will give you the interest :"+interest);
+    }
+}
+
+public class exp21 {
+    public static void main(String [] args)
+    {
+        Scanner get=new Scanner(System.in);
+        int choice;
+        aa:
+        do {
+            System.out.println("1.SBI\n2.ICICI\n3.AXIS\n\nEnter your choice : ");
+            choice=get.nextInt();
+            switch (choice)
+            {
+                case 1:
+                    sbi s=new sbi();
+                    s.getdata();
+                    s.rateofinterest();
+                    break;
+                case 2:
+                    icici i= new icici();
+                    i.getdata();
+                    i.rateofinterest();
+                    break;
+                case 3:
+                    axis a= new axis();
+                    a.getdata();
+                    a.rateofinterest();
+                    break ;
+                case 4:
+                    break aa;
+                default:
+                    System.out.println("\n!! INVALID INPUT !!");
+            }
+        }while(true);
+    }
+}
